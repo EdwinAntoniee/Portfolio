@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pixel Portfolio | Front-End Developer</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- JavaScript -->
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <div class="crt-overlay"></div>
+
+  <!-- RPG HUD Navigation -->
+  <nav class="hud-nav" id="hud-nav">
+    <a href="#sky-layer">Home</a>
+    <a href="#surface-layer">Stats</a>
+    <a href="#projects">Quests</a>
+    <a href="#beyond-code">Guild</a>
+    <a href="#underground-layer">Contact</a>
+  </nav>
+
+  <button id="theme-toggle" class="pixel-btn fixed-toggle" aria-label="Toggle Night Mode">🌙</button>
+
+  <!-- LAYER 1: SKY -->
+  <header id="sky-layer">
+    <canvas id="stars-canvas"></canvas>
+    <div class="pixel-sun" id="sun-moon"></div>
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2" style="--scale: 1.5;"></div>
+    <div class="cloud cloud-3" style="--scale: 0.8;"></div>
+
+    <div class="hero-content">
+      <h1 class="hero-title retro-font">PLAYER_ONE</h1>
+      <!-- JS Typewriter target -->
+      <p class="hero-tagline"><span id="typewriter-text"></span><span class="cursor-blink">_</span></p>
+      <div class="hero-buttons">
+        <a href="#projects" class="pixel-btn">View Projects</a>
+        <a href="#underground-layer" class="pixel-btn contact-btn">Contact Me</a>
+      </div>
+    </div>
+
+    <div class="mountains">
+      <div class="pixel-mountain-bg mnt-bg-1"></div>
+      <div class="pixel-mountain-bg mnt-bg-2"></div>
+      <div class="pixel-mountain-bg mnt-bg-3"></div>
+      <div class="pixel-mountain-fg mnt-fg-1"></div>
+      <div class="pixel-mountain-fg mnt-fg-2"></div>
+    </div>
+    <div class="scroll-indicator"><a href="#surface-layer" class="pixel-btn" aria-label="Scroll Down">▼</a></div>
+  </header>
+
+  <div class="transition-ground"></div>
+
+  <!-- LAYER 2: SURFACE -->
+  <main id="surface-layer">
+    <div class="container">
+
+      <!-- Stats -->
+      <section class="pixel-panel fade-up">
+        <h2 class="section-title retro-font">Character Stats</h2>
+        <div class="about-layout">
+          <!-- Replaced empty frame with CSS Pixel Art Avatar -->
+          <div class="css-avatar" aria-label="Pixel Art Avatar"></div>
+          <div class="about-text">
+            <p>Greetings, traveler! I am a passionate Front-End Developer specializing in building immersive,
+              high-performance web experiences. I merge structured logic with creative design to craft user interfaces
+              that feel alive.</p>
+            <ul class="contact-list">
+              <li><strong>CLASS:</strong> Senior Dev</li>
+              <li><strong>HP:</strong> 100/100</li>
+              <li><strong>LOC:</strong> Jakarta, ID</li>
+              <li><strong>EMAIL:</strong> user@example.com</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tech Inventory -->
+      <section class="pixel-panel fade-up">
+        <h2 class="section-title retro-font">Inventory (Hard Skills)</h2>
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h4 class="retro-font">Core Tech</h4>
+            <div class="skill-item"><span>JavaScript</span>
+              <div class="pixel-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"
+                aria-label="JavaScript Proficiency">
+                <div class="pixel-bar-fill" style="width: 90%;"></div>
+              </div>
+            </div>
+            <div class="skill-item"><span>HTML/CSS</span>
+              <div class="pixel-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"
+                aria-label="HTML CSS Proficiency">
+                <div class="pixel-bar-fill" style="width: 95%;"></div>
+              </div>
+            </div>
+            <div class="skill-item"><span>TypeScript</span>
+              <div class="pixel-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
+                aria-label="TypeScript Proficiency">
+                <div class="pixel-bar-fill" style="width: 75%;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h4 class="retro-font">Frameworks</h4>
+            <div class="skill-item"><span>React</span>
+              <div class="pixel-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"
+                aria-label="React Proficiency">
+                <div class="pixel-bar-fill" style="width: 85%;"></div>
+              </div>
+            </div>
+            <div class="skill-item"><span>Vue.js</span>
+              <div class="pixel-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"
+                aria-label="Vue js Proficiency">
+                <div class="pixel-bar-fill" style="width: 70%;"></div>
+              </div>
+            </div>
+            <div class="skill-item"><span>Tailwind</span>
+              <div class="pixel-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"
+                aria-label="Tailwind Proficiency">
+                <div class="pixel-bar-fill" style="width: 90%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Quests -->
+      <section class="fade-up" id="projects">
+        <h2 class="section-title retro-font" style="color: white; text-shadow: 2px 2px 0px #000;">Main Quests (Projects)
+        </h2>
+        <div class="carousel-container">
+          <button class="pixel-btn carousel-btn prev-btn" aria-label="Previous">◀</button>
+          <div class="carousel-wrapper">
+            <div class="carousel-track project-grid">
+              <article class="pixel-panel project-card interactive" tabindex="0" role="button" data-id="ecommerce">
+                <h3 class="project-title retro-font">E-Commerce Platform</h3>
+                <p class="project-desc">A full-stack, headless e-commerce experience featuring real-time inventory
+                  updates.</p>
+                <div class="tech-tags"><span class="tech-tag">Next.js</span><span class="tech-tag">Stripe</span></div>
+                <span class="pixel-btn" style="padding: 10px; font-size: 0.8rem; text-align: center;">Details</span>
+              </article>
+              <article class="pixel-panel project-card interactive" tabindex="0" role="button" data-id="weather">
+                <h3 class="project-title retro-font">Weather API Dashboard</h3>
+                <p class="project-desc">Interactive geographical data visualization dashboard fetching real-time weather
+                  data.</p>
+                <div class="tech-tags"><span class="tech-tag">D3.js</span><span class="tech-tag">CSS Grid</span></div>
+                <span class="pixel-btn" style="padding: 10px; font-size: 0.8rem; text-align: center;">Details</span>
+              </article>
+              <article class="pixel-panel project-card interactive" tabindex="0" role="button" data-id="pixelart">
+                <h3 class="project-title retro-font">Pixel Art Generator</h3>
+                <p class="project-desc">A browser-based drawing tool for creating and exporting 8-bit style sprites.</p>
+                <div class="tech-tags"><span class="tech-tag">Canvas</span><span class="tech-tag">React</span></div>
+                <span class="pixel-btn" style="padding: 10px; font-size: 0.8rem; text-align: center;">Details</span>
+              </article>
+              <article class="pixel-panel project-card interactive" tabindex="0" role="button" data-id="crypto">
+                <h3 class="project-title retro-font">Crypto Tracker</h3>
+                <p class="project-desc">Real-time cryptocurrency dashboard tracking prices, market caps, and historical
+                  trends.</p>
+                <div class="tech-tags"><span class="tech-tag">Vue 3</span><span class="tech-tag">Chart.js</span></div>
+                <span class="pixel-btn" style="padding: 10px; font-size: 0.8rem; text-align: center;">Details</span>
+              </article>
+            </div>
+          </div>
+          <button class="pixel-btn carousel-btn next-btn" aria-label="Next">▶</button>
+        </div>
+      </section>
+
+      <!-- Academic Quests -->
+      <section class="fade-up">
+        <h2 class="section-title retro-font" style="color: white; text-shadow: 2px 2px 0px #000;">Side Quests (Academic)
+        </h2>
+        <div class="carousel-container">
+          <button class="pixel-btn carousel-btn prev-btn" aria-label="Previous">◀</button>
+          <div class="carousel-wrapper">
+            <div class="carousel-track project-grid">
+              <article class="pixel-panel project-card academic interactive" tabindex="0" role="button"
+                data-id="algoviz">
+                <h3 class="project-title retro-font">Algorithm Visualizer</h3>
+                <p class="project-desc">An educational application that visually demonstrates complex pathfinding and
+                  sorting algorithms.</p>
+                <div class="tech-tags"><span class="tech-tag">Java</span><span class="tech-tag">Processing</span></div>
+                <span class="pixel-btn" style="padding: 10px; font-size: 0.8rem; text-align: center;">Details</span>
+              </article>
+              <article class="pixel-panel project-card academic interactive" tabindex="0" role="button"
+                data-id="mlmodel">
+                <h3 class="project-title retro-font">Machine Learning Model</h3>
+                <p class="project-desc">Developed a predictive model utilizing historical municipal data to forecast
+                  market trends.</p>
+                <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag">TensorFlow</span>
+                </div>
+                <span class="pixel-btn" style="padding: 10px; font-size: 0.8rem; text-align: center;">Details</span>
+              </article>
+            </div>
+          </div>
+          <button class="pixel-btn carousel-btn next-btn" aria-label="Next">▶</button>
+        </div>
+      </section>
+
+      <!-- Certificates -->
+      <section class="pixel-panel fade-up">
+        <h2 class="section-title retro-font">Achievements</h2>
+        <div class="carousel-container">
+          <button class="pixel-btn carousel-btn prev-btn" aria-label="Previous">◀</button>
+          <div class="carousel-wrapper">
+            <div class="carousel-track cert-grid">
+              <div class="cert-item interactive" tabindex="0" role="button" data-id="cert_frontend">
+                <h4 class="retro-font">Frontend Architect</h4><span class="cert-issuer">Google / Coursera</span>
+              </div>
+              <div class="cert-item interactive" tabindex="0" role="button" data-id="cert_react">
+                <h4 class="retro-font">Advanced React Patterns</h4><span class="cert-issuer">Frontend Masters</span>
+              </div>
+              <div class="cert-item interactive" tabindex="0" role="button" data-id="cert_aws">
+                <h4 class="retro-font">AWS Cloud Practitioner</h4><span class="cert-issuer">Amazon Web Services</span>
+              </div>
+              <div class="cert-item interactive" tabindex="0" role="button" data-id="cert_uiux">
+                <h4 class="retro-font">UI/UX Design Specialization</h4><span class="cert-issuer">CalArts</span>
+              </div>
+            </div>
+          </div>
+          <button class="pixel-btn carousel-btn next-btn" aria-label="Next">▶</button>
+        </div>
+      </section>
+
+      <!-- STAGE 2 SEPARATOR -->
+      <div class="stage-separator fade-up">
+        <div class="pixel-track"></div>
+        <div class="quest-badge retro-font">
+          <span class="star-blink">★</span>
+          STAGE 2: HUMAN SKILLS
+          <span class="star-blink">★</span>
+        </div>
+        <div class="pixel-track"></div>
+      </div>
+
+      <!-- Soft Skills (Non-Technical) -->
+      <section class="pixel-panel fade-up">
+        <h2 class="section-title retro-font">Passive Traits (Soft Skills)</h2>
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h4 class="retro-font">Leadership & Mgmt</h4>
+            <div class="skill-item"><span>Team Leading</span>
+              <div class="pixel-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                <div class="pixel-bar-fill" style="width: 90%;"></div>
+              </div>
+            </div>
+            <div class="skill-item"><span>Project Mgmt</span>
+              <div class="pixel-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                <div class="pixel-bar-fill" style="width: 85%;"></div>
+              </div>
+            </div>
+            <div class="skill-item"><span>Event Ops</span>
+              <div class="pixel-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                <div class="pixel-bar-fill" style="width: 95%;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h4 class="retro-font">Comm. & Strategy</h4>
+            <div class="skill-item"><span>Public Speaking</span>
+              <div class="pixel-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                <div class="pixel-bar-fill" style="width: 85%;"></div>
+              </div>
+            </div>
+            <div class="skill-item"><span>Problem Solving</span>
+              <div class="pixel-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                <div class="pixel-bar-fill" style="width: 90%;"></div>
+              </div>
+            </div>
+            <div class="skill-item"><span>Copywriting</span>
+              <div class="pixel-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                <div class="pixel-bar-fill" style="width: 80%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Beyond Code / Guild Quests -->
+      <section class="fade-up" id="beyond-code">
+        <h2 class="section-title retro-font" style="color: white; text-shadow: 2px 2px 0px #000;">Beyond Code (Guild
+          Quests)</h2>
+        <div class="carousel-container">
+          <button class="pixel-btn carousel-btn prev-btn" aria-label="Previous">◀</button>
+          <div class="carousel-wrapper">
+            <div class="carousel-track project-grid">
+              <article class="pixel-panel project-card beyond interactive" tabindex="0" role="button"
+                data-id="cssociety">
+                <h3 class="project-title retro-font">CS Society President</h3>
+                <p class="project-desc">Led 200+ students in the campus guild. Ensured all members leveled up together.
+                </p>
+                <div class="tech-tags"><span class="tech-tag">Leadership</span><span class="tech-tag">Public
+                    Speaking</span></div>
+                <span class="pixel-btn" style="padding: 10px; font-size: 0.8rem; text-align: center;">Read more
+                  -></span>
+              </article>
+              <article class="pixel-panel project-card beyond interactive" tabindex="0" role="button"
+                data-id="pmintern">
+                <h3 class="project-title retro-font">Product Intern</h3>
+                <p class="project-desc">Bridged the gap between engineers and users. Released 3 features on schedule.
+                </p>
+                <div class="tech-tags"><span class="tech-tag">Strategy</span><span class="tech-tag">Agile</span></div>
+                <span class="pixel-btn" style="padding: 10px; font-size: 0.8rem; text-align: center;">Read more
+                  -></span>
+              </article>
+              <article class="pixel-panel project-card beyond interactive" tabindex="0" role="button"
+                data-id="hackathon">
+                <h3 class="project-title retro-font">Head of Hackathon</h3>
+                <p class="project-desc">Gathered 500+ hackers nationwide for 48 hours of nonstop coding.</p>
+                <div class="tech-tags"><span class="tech-tag">Event Mgmt</span><span class="tech-tag">Operations</span>
+                </div>
+                <span class="pixel-btn" style="padding: 10px; font-size: 0.8rem; text-align: center;">Read more
+                  -></span>
+              </article>
+              <article class="pixel-panel project-card beyond interactive" tabindex="0" role="button"
+                data-id="techwriter">
+                <h3 class="project-title retro-font">Tech Writer</h3>
+                <p class="project-desc">Writing casual technical articles read by 10,000+ people monthly.</p>
+                <div class="tech-tags"><span class="tech-tag">Communication</span><span class="tech-tag">SEO</span>
+                </div>
+                <span class="pixel-btn" style="padding: 10px; font-size: 0.8rem; text-align: center;">Read more
+                  -></span>
+              </article>
+            </div>
+          </div>
+          <button class="pixel-btn carousel-btn next-btn" aria-label="Next">▶</button>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- LAYER 3: UNDERGROUND -->
+  <div class="transition-cave"></div>
+  <footer id="underground-layer">
+    <div class="pixel-rock rock-1"></div>
+    <div class="pixel-rock rock-2"></div>
+    <div class="pixel-crystal crys-1"></div>
+    <div class="pixel-crystal crys-2"></div>
+
+    <div class="container footer-content fade-up">
+      <h2 class="section-title retro-font footer-title">Save Point</h2>
+      <p>Ready to collaborate on a new adventure? Send a message.</p>
+
+      <!-- Real Contact Form -->
+      <form action="https://formspree.io/f/placeholder" method="POST" class="contact-form">
+        <input type="email" name="email" placeholder="YOUR_EMAIL@DOMAIN.COM" required aria-label="Email Address">
+        <textarea name="message" placeholder="ENTER MESSAGE HERE..." rows="4" required aria-label="Message"></textarea>
+        <button type="submit" class="pixel-btn">SEND MESSAGE</button>
+      </form>
+
+      <div class="social-links">
+        <a href="#" target="_blank" rel="noopener noreferrer" class="pixel-btn"
+          style="background-color: #eee;">GitHub</a>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="pixel-btn"
+          style="background-color: #0077b5; color: white;">LinkedIn</a>
+        <a href="mailto:user@example.com" class="pixel-btn"
+          style="background-color: var(--grass-top); color: white;">Email</a>
+      </div>
+      <p class="copyright">© 2026 PLAYER_ONE. Hand-coded with precision. No frameworks were harmed.</p>
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+  <div id="pixel-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content pixel-panel" id="modal-scroll-area">
+      <button class="pixel-btn btn-close" aria-label="Close modal" id="btn-close-modal">X</button>
+      <img id="modal-image" class="modal-image" src="" alt="Preview" style="display: none;" loading="lazy">
+      <h3 id="modal-title" class="section-title retro-font"
+        style="border-bottom: none; margin-bottom: 15px; color: var(--link);"></h3>
+
+      <ul class="modal-meta" id="modal-meta" style="display: none;">
+        <li><strong>Category:</strong> <span id="modal-category"></span></li>
+        <li><strong>Ownership:</strong> <span id="modal-ownership"></span></li>
+        <li><strong>Role:</strong> <span id="modal-role"></span></li>
+      </ul>
+
+      <p id="modal-desc" style="margin-bottom: 20px;"></p>
+      <div id="modal-sections" style="display: none;"></div>
+      <div id="modal-tags" class="tech-tags" style="display: none; margin-bottom: 20px;"></div>
+
+      <div class="modal-actions" id="modal-actions-container"
+        style="margin-top: 25px; display: flex; gap: 10px; flex-wrap: wrap;">
+        <a id="modal-link" href="#" target="_blank" rel="noopener noreferrer" class="pixel-btn"
+          style="padding: 10px 20px; font-size: 0.9rem; display: none;">Live Platform</a>
+        <a id="modal-repo" href="#" target="_blank" rel="noopener noreferrer" class="pixel-btn"
+          style="padding: 10px 20px; font-size: 0.9rem; background-color: var(--stone); color: white; display: none;">Repository</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
