@@ -395,6 +395,40 @@ document.addEventListener("DOMContentLoaded", () => {
     faders.forEach((fader) => fader.classList.add("visible"));
   }
 
+  // Checkpoint Flag Observer
+  const flags = document.querySelectorAll(".checkpoint-flag");
+  if (!prefersReducedMotion && flags.length > 0) {
+    // Requires the flag to pass the bottom 40% of the screen, preventing the next section from triggering prematurely
+    const flagOptions = { threshold: 0.5, rootMargin: "0px 0px -40% 0px" };
+    const flagObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        const img = entry.target;
+        if (entry.isIntersecting) {
+          if (img.dataset.flag && !img.dataset.flagged) {
+            // User must remain focused on this section for 1.5 seconds
+            img.dataset.timerId = setTimeout(() => {
+              img.dataset.flagged = "true";
+              img.src = img.dataset.flag;
+              img.classList.add("flag-reached");
+              observer.unobserve(img); // Stop observing once flagged
+            }, 1000);
+          }
+        } else {
+          // If the section leaves the focus area before 1.5s, cancel the checkpoint!
+          if (img.dataset.timerId) {
+            clearTimeout(img.dataset.timerId);
+            delete img.dataset.timerId;
+          }
+        }
+      });
+    }, flagOptions);
+    flags.forEach((flag) => flagObserver.observe(flag));
+  } else if (flags.length > 0) {
+    flags.forEach((flag) => {
+      if (flag.dataset.flag) flag.src = flag.dataset.flag;
+    });
+  }
+
   // HUD Nav Scroll logic
   let lastScrollY = window.scrollY;
   const hudNav = document.getElementById("hud-nav");
@@ -543,19 +577,19 @@ document.addEventListener("DOMContentLoaded", () => {
   // JS Typewriter Effect
   if (!prefersReducedMotion) {
     const twTarget = document.getElementById("typewriter-text");
-    const fullText = "Front-End Developer & UI Designer";
+    const fullText = "Undergraduate Computer Science | AI Enthusiast";
     let twIndex = 0;
     function typeWriter() {
       if (twIndex < fullText.length) {
         twTarget.textContent += fullText.charAt(twIndex);
         twIndex++;
-        setTimeout(typeWriter, 80);
+        setTimeout(typeWriter, 40);
       }
     }
     setTimeout(typeWriter, 500);
   } else {
     document.getElementById("typewriter-text").textContent =
-      "Front-End Developer & UI Designer";
+      "Undergraduate Computer Science | AI Enthusiast";
   }
 
   // Canvas Stars
