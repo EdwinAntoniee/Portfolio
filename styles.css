@@ -84,7 +84,7 @@ body {
   background-color: var(--underground-bg);
   line-height: 1.5;
   overflow-x: hidden;
-  cursor:
+  cursor:20
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath fill='%23FFF' stroke='%23000' stroke-width='1.5' stroke-linejoin='miter' d='M3 3v14l3-3 2 5 2-1-2-5 4-1z'/%3E%3C/svg%3E")
       3 3,
     auto;
@@ -735,25 +735,147 @@ body.night-mode #stars-canvas {
   align-items: center;
 }
 
-/* Mini-Me Mascot */
-.mini-me-mascot {
-  position: absolute;
-  bottom: -29px; /* Sits directly on the bottom border */
-  left: -10px; /* Hanging off the left edge */
-  width: 90px; /* Increased size */
-  height: auto;
-  z-index: 10;
-  animation: float-mascot 3s ease-in-out infinite;
-  filter: drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.3));
-  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-.mini-me-mascot:hover {
-  transform: translateY(-15px) scale(1.1);
+/* --- Section Decorative Icon Art System --- */
+.section-decorated {
+  position: relative;
+  overflow: visible;
 }
 
-@keyframes float-mascot {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+.section-icon-art {
+  position: absolute;
+  width: clamp(60px, 8vw, 100px);
+  height: auto;
+  z-index: 10;
+  filter: drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.3));
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  pointer-events: auto;
+  image-rendering: auto;
+}
+
+.section-icon-art:hover,
+.project-card:hover .section-icon-art,
+.project-card:focus-visible .section-icon-art {
+  transform: scale(1.15) rotate(-5deg) !important;
+  filter: drop-shadow(6px 6px 0px rgba(0, 0, 0, 0.4)) brightness(1.1);
+}
+
+/* --- Variative Position Classes --- */
+/* Top-Right: tilted, peeking from corner */
+.icon-pos-top-right {
+  top: clamp(-30px, -4vw, -15px);
+  right: clamp(-15px, -2vw, -5px);
+  transform: rotate(12deg);
+}
+
+/* Top-Left: leaning in from left corner */
+.icon-pos-top-left {
+  top: clamp(-25px, -3.5vw, -10px);
+  left: clamp(-15px, -2vw, -5px);
+  transform: rotate(-8deg);
+}
+
+/* Bottom-Right: sitting on the edge */
+.icon-pos-bottom-right {
+  bottom: clamp(-35px, -4.5vw, -15px);
+  right: clamp(10px, 3vw, 40px);
+  transform: rotate(5deg);
+}
+
+/* Bottom-Left: hanging off the left, grounded feel */
+.icon-pos-bottom-left {
+  bottom: clamp(-40px, -5vw, -20px);
+  left: clamp(-20px, -2.5vw, -8px);
+  transform: rotate(-3deg);
+}
+
+/* Contact/Footer special: centered above the title */
+.icon-pos-contact {
+  top: clamp(-45px, -5vw, -25px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(55px, 7vw, 90px);
+}
+
+/* --- Fun Animation Classes --- */
+/* Float: gentle up-and-down hover */
+.icon-float {
+  animation: icon-float 3s ease-in-out infinite;
+}
+@keyframes icon-float {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-8px) rotate(-3deg); }
+}
+
+/* Wobble: playful side-to-side tilt */
+.icon-wobble {
+  animation: icon-wobble 3.5s ease-in-out infinite;
+}
+@keyframes icon-wobble {
+  0%, 100% { transform: rotate(12deg); }
+  25% { transform: rotate(18deg) translateY(-3px); }
+  50% { transform: rotate(8deg); }
+  75% { transform: rotate(15deg) translateY(-5px); }
+}
+
+/* Bounce: energetic hop */
+.icon-bounce {
+  animation: icon-bounce 2s ease-in-out infinite;
+}
+@keyframes icon-bounce {
+  0%, 100% { transform: translateY(0) rotate(-8deg); }
+  30% { transform: translateY(-12px) rotate(-8deg); }
+  50% { transform: translateY(-4px) rotate(-8deg); }
+  70% { transform: translateY(-10px) rotate(-8deg); }
+}
+
+/* Bounce Slow: relaxed, infrequent hop */
+.icon-bounce-slow {
+  animation: icon-bounce-slow 5s ease-in-out infinite;
+}
+@keyframes icon-bounce-slow {
+  0%, 60%, 100% { transform: translateY(0) rotate(0deg); }
+  70% { transform: translateY(-12px) rotate(0deg); }
+  80% { transform: translateY(-4px) rotate(0deg); }
+  90% { transform: translateY(-10px) rotate(0deg); }
+}
+
+/* Contact bounce override (no rotation, uses translateX) */
+.icon-pos-contact.icon-bounce {
+  animation: icon-bounce-contact 2s ease-in-out infinite;
+}
+@keyframes icon-bounce-contact {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  30% { transform: translateX(-50%) translateY(-12px); }
+  50% { transform: translateX(-50%) translateY(-4px); }
+  70% { transform: translateX(-50%) translateY(-10px); }
+}
+
+/* Spin-Slow: gentle continuous rotation */
+.icon-spin-slow {
+  animation: icon-spin-slow 8s linear infinite;
+}
+@keyframes icon-spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Swing: pendulum-like sway (great for medal) */
+.icon-swing {
+  transform-origin: top center;
+  animation: icon-swing 2.5s ease-in-out infinite;
+}
+@keyframes icon-swing {
+  0%, 100% { transform: rotate(12deg); }
+  50% { transform: rotate(-8deg); }
+}
+
+/* Pulse: breathing glow scale (great for star) */
+.icon-pulse {
+  animation: icon-pulse 2s ease-in-out infinite;
+}
+@keyframes icon-pulse {
+  0%, 100% { transform: scale(1) rotate(-3deg); filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.3)); }
+  50% { transform: scale(1.08) rotate(-3deg); filter: drop-shadow(4px 4px 8px rgba(255,204,0,0.4)); }
 }
 
 /* Real Profile Photo */
@@ -1143,6 +1265,7 @@ body.night-mode .contact-form textarea {
 .footer-title {
   color: white;
   text-shadow: 3px 3px 0px #000;
+  border-bottom-color: var(--panel-bg);
 }
 .social-links {
   display: flex;
@@ -1258,6 +1381,30 @@ body.night-mode .contact-form textarea {
   .section-title {
     font-size: 1.3rem;
   }
+  /* Scale down section icons on mobile */
+  .section-icon-art {
+    width: clamp(40px, 12vw, 65px);
+  }
+  .icon-pos-top-right {
+    top: clamp(-20px, -3vw, -10px);
+    right: clamp(-8px, -1.5vw, -3px);
+  }
+  .icon-pos-top-left {
+    top: clamp(-18px, -3vw, -8px);
+    left: clamp(-8px, -1.5vw, -3px);
+  }
+  .icon-pos-bottom-right {
+    bottom: clamp(-22px, -3.5vw, -10px);
+    right: clamp(5px, 2vw, 20px);
+  }
+  .icon-pos-bottom-left {
+    bottom: clamp(-25px, -4vw, -12px);
+    left: clamp(-10px, -2vw, -4px);
+  }
+  .icon-pos-contact {
+    top: clamp(-30px, -4vw, -18px);
+    width: clamp(40px, 10vw, 60px);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1270,7 +1417,8 @@ body.night-mode .contact-form textarea {
   .pixel-sun,
   .star,
   .hero-tagline,
-  .star-blink {
+  .star-blink,
+  .section-icon-art {
     animation: none !important;
   }
   .fade-up,

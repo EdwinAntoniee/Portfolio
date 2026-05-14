@@ -324,10 +324,28 @@ function openModal(id) {
   if (projectInfo.imageUrl && projectInfo.imageUrl.trim() !== "") {
     modalImage.src = projectInfo.imageUrl;
     modalImage.style.display = "block";
-  } else if (projectInfo.category) {
-    // Generates placeholder for projects, not certs
-    modalImage.src = `https://placehold.co/800x400/444444/ffffff?text=${encodeURIComponent(projectInfo.title)}+Preview`;
+    modalImage.style.objectFit = "cover";
+  } else if (projectInfo.category === "Leadership & Community" || projectInfo.category === "Product & Strategy" || projectInfo.category === "Event Management" || projectInfo.category === "Content Creation") {
+    // Beyond Code section -> cash
+    modalImage.src = "assets/cash.svg";
     modalImage.style.display = "block";
+    modalImage.style.objectFit = "contain";
+    modalImage.style.maxHeight = "150px";
+    modalImage.style.margin = "0 auto 20px auto";
+  } else if (projectInfo.category === "Educational Tool" || projectInfo.category === "Machine Learning") {
+    // Academic Projects -> book
+    modalImage.src = "assets/book.svg";
+    modalImage.style.display = "block";
+    modalImage.style.objectFit = "contain";
+    modalImage.style.maxHeight = "150px";
+    modalImage.style.margin = "0 auto 20px auto";
+  } else if (projectInfo.category) {
+    // Independent Projects -> bulb
+    modalImage.src = "assets/bulb.svg";
+    modalImage.style.display = "block";
+    modalImage.style.objectFit = "contain";
+    modalImage.style.maxHeight = "150px";
+    modalImage.style.margin = "0 auto 20px auto";
   } else {
     modalImage.style.display = "none";
     modalImage.src = "";

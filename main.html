@@ -65,7 +65,8 @@
     <div class="container">
 
       <!-- Stats -->
-      <section class="pixel-panel fade-up">
+      <section class="pixel-panel fade-up section-decorated">
+        <img src="assets/mini-me.svg" alt="Mini Edwin" class="section-icon-art icon-pos-bottom-left icon-float" />
         <h2 class="section-title retro-font">
           <img src="assets/pole.svg" data-flag="assets/flag.svg" alt="Checkpoint" class="checkpoint-flag" />
           Quick Overview
@@ -74,11 +75,9 @@
           <!-- Real Profile Photo -->
           <div style="position: relative; display: inline-block; flex-shrink: 0;">
             <img src="assets/personal_photo.jpeg" alt="Edwin Antonie" class="profile-photo" />
-            <!-- Mini-Me Mascot -->
-            <img src="assets/mini-me.svg" alt="Mini Edwin" class="mini-me-mascot" />
           </div>
           <div class="about-text">
-            <p>I’m an undergraduate Computer Science student at Bina Nusantara University, 
+            <p>I'm an undergraduate Computer Science student at Bina Nusantara University, 
               expected to graduate in 2028. Passionate about technology and AI development, 
               I enjoy exploring new ideas, building projects, and seeking opportunities. Thanks for visiting my website!</p>
             <ul class="contact-list">
@@ -92,10 +91,11 @@
       </section>
 
       <!-- Tech Inventory -->
-      <section class="pixel-panel fade-up">
+      <section class="pixel-panel fade-up section-decorated">
+        <img src="assets/scroll.svg" alt="Scroll" class="section-icon-art icon-pos-top-right icon-wobble" style="width: clamp(80px, 10vw, 120px); top: -20px; right: -20px;" />
         <h2 class="section-title retro-font">
           <img src="assets/pole.svg" data-flag="assets/flag.svg" alt="Checkpoint" class="checkpoint-flag" />
-          Inventory (Hard Skills)
+          Perks
         </h2>
         <div class="skills-grid">
           <div class="skill-group">
@@ -144,7 +144,7 @@
       </section>
 
       <!-- Main Quests -->
-      <section class="fade-up" id="projects">
+      <section class="fade-up section-decorated" id="projects">
         <h2 class="section-title retro-font" style="color: white; text-shadow: 2px 2px 0px #000;">
           <img src="assets/pole.svg" data-flag="assets/flag.svg" alt="Checkpoint" class="checkpoint-flag" />
           Independent Projects
@@ -153,27 +153,31 @@
           <button class="pixel-btn carousel-btn prev-btn" aria-label="Previous">◀</button>
           <div class="carousel-wrapper">
             <div class="carousel-track project-grid">
-              <article class="pixel-panel project-card interactive" tabindex="0" role="button" data-id="ecommerce">
+              <article class="pixel-panel project-card interactive" tabindex="0" role="button" data-id="ecommerce" style="position: relative;">
+                <img src="assets/bulb.svg" alt="Bulb" class="section-icon-art icon-bounce" style="width: clamp(50px, 6vw, 75px); top: -5px; right: -5px;" />
                 <h3 class="project-title retro-font">E-Commerce Platform</h3>
                 <p class="project-desc">A full-stack, headless e-commerce experience featuring real-time inventory
                   updates.</p>
                 <div class="tech-tags"><span class="tech-tag">Next.js</span><span class="tech-tag">Stripe</span></div>
                 <span class="pixel-btn" style="padding: 10px; font-size: 0.8rem; text-align: center;">Details</span>
               </article>
-              <article class="pixel-panel project-card interactive" tabindex="0" role="button" data-id="weather">
+              <article class="pixel-panel project-card interactive" tabindex="0" role="button" data-id="weather" style="position: relative;">
+                <img src="assets/bulb.svg" alt="Bulb" class="section-icon-art icon-bounce" style="width: clamp(50px, 6vw, 75px); top: -5px; right: -5px; animation-delay: 0.2s;" />
                 <h3 class="project-title retro-font">Weather API Dashboard</h3>
                 <p class="project-desc">Interactive geographical data visualization dashboard fetching real-time weather
                   data.</p>
                 <div class="tech-tags"><span class="tech-tag">D3.js</span><span class="tech-tag">CSS Grid</span></div>
                 <span class="pixel-btn" style="padding: 10px; font-size: 0.8rem; text-align: center;">Details</span>
               </article>
-              <article class="pixel-panel project-card interactive" tabindex="0" role="button" data-id="pixelart">
+              <article class="pixel-panel project-card interactive" tabindex="0" role="button" data-id="pixelart" style="position: relative;">
+                <img src="assets/bulb.svg" alt="Bulb" class="section-icon-art icon-bounce" style="width: clamp(50px, 6vw, 75px); top: -5px; right: -5px; animation-delay: 0.4s;" />
                 <h3 class="project-title retro-font">Pixel Art Generator</h3>
                 <p class="project-desc">A browser-based drawing tool for creating and exporting 8-bit style sprites.</p>
                 <div class="tech-tags"><span class="tech-tag">Canvas</span><span class="tech-tag">React</span></div>
                 <span class="pixel-btn" style="padding: 10px; font-size: 0.8rem; text-align: center;">Details</span>
               </article>
-              <article class="pixel-panel project-card interactive" tabindex="0" role="button" data-id="crypto">
+              <article class="pixel-panel project-card interactive" tabindex="0" role="button" data-id="crypto" style="position: relative;">
+                <img src="assets/bulb.svg" alt="Bulb" class="section-icon-art icon-bounce" style="width: clamp(50px, 6vw, 75px); top: -5px; right: -5px; animation-delay: 0.6s;" />
                 <h3 class="project-title retro-font">Crypto Tracker</h3>
                 <p class="project-desc">Real-time cryptocurrency dashboard tracking prices, market caps, and historical
                   trends.</p>
@@ -187,10 +191,11 @@
       </section>
 
       <!-- Academic Quests -->
-      <section class="fade-up">
+      <section class="fade-up section-decorated">
         <h2 class="section-title retro-font" style="color: white; text-shadow: 2px 2px 0px #000;">
           <img src="assets/pole.svg" data-flag="assets/flag.svg" alt="Checkpoint" class="checkpoint-flag" />
           Academic Projects
+          <img src="assets/book.svg" alt="Book" class="section-icon-art icon-float" style="position: relative; width: clamp(50px, 7vw, 70px); display: inline-block; vertical-align: bottom; margin-left: 20px; margin-bottom: -10px;" />
         </h2>
         <div class="carousel-container">
           <button class="pixel-btn carousel-btn prev-btn" aria-label="Previous">◀</button>
@@ -220,7 +225,8 @@
       </section>
 
       <!-- Certificates -->
-      <section class="pixel-panel fade-up">
+      <section class="pixel-panel fade-up section-decorated">
+        <img src="assets/medal.svg" alt="Medal" class="section-icon-art icon-pos-top-right icon-swing" style="width: clamp(80px, 10vw, 120px); top: -20px; right: -20px;" />
         <h2 class="section-title retro-font">
           <img src="assets/pole.svg" data-flag="assets/flag.svg" alt="Checkpoint" class="checkpoint-flag" />
           Achievements
@@ -259,7 +265,8 @@
       </div>
 
       <!-- Soft Skills (Non-Technical) -->
-      <section class="pixel-panel fade-up">
+      <section class="pixel-panel fade-up section-decorated">
+        <img src="assets/star.svg" alt="Star" class="section-icon-art icon-pos-bottom-right icon-pulse" style="width: clamp(80px, 10vw, 120px); bottom: -20px; right: -20px;" />
         <h2 class="section-title retro-font">
           <img src="assets/pole.svg" data-flag="assets/flag.svg" alt="Checkpoint" class="checkpoint-flag" />
           Passive Traits (Soft Skills)
@@ -305,7 +312,7 @@
       </section>
 
       <!-- Beyond Code / Guild Quests -->
-      <section class="fade-up" id="beyond-code">
+      <section class="fade-up section-decorated" id="beyond-code">
         <h2 class="section-title retro-font" style="color: white; text-shadow: 2px 2px 0px #000;">
           <img src="assets/pole.svg" data-flag="assets/flag.svg" alt="Checkpoint" class="checkpoint-flag" />
           Beyond Code (Guild Quests)
@@ -315,7 +322,8 @@
           <div class="carousel-wrapper">
             <div class="carousel-track project-grid">
               <article class="pixel-panel project-card beyond interactive" tabindex="0" role="button"
-                data-id="cssociety">
+                data-id="cssociety" style="position: relative;">
+                <img src="assets/cash.svg" alt="Cash" class="section-icon-art icon-wobble" style="width: clamp(55px, 7vw, 85px); bottom: -30px; right: -20px;" />
                 <h3 class="project-title retro-font">CS Society President</h3>
                 <p class="project-desc">Led 200+ students in the campus guild. Ensured all members leveled up together.
                 </p>
@@ -325,7 +333,8 @@
                   -></span>
               </article>
               <article class="pixel-panel project-card beyond interactive" tabindex="0" role="button"
-                data-id="pmintern">
+                data-id="pmintern" style="position: relative;">
+                <img src="assets/cash.svg" alt="Cash" class="section-icon-art icon-wobble" style="width: clamp(55px, 7vw, 85px); bottom: -30px; right: -20px; animation-delay: 0.2s;" />
                 <h3 class="project-title retro-font">Product Intern</h3>
                 <p class="project-desc">Bridged the gap between engineers and users. Released 3 features on schedule.
                 </p>
@@ -334,7 +343,8 @@
                   -></span>
               </article>
               <article class="pixel-panel project-card beyond interactive" tabindex="0" role="button"
-                data-id="hackathon">
+                data-id="hackathon" style="position: relative;">
+                <img src="assets/cash.svg" alt="Cash" class="section-icon-art icon-wobble" style="width: clamp(55px, 7vw, 85px); bottom: -30px; right: -20px; animation-delay: 0.4s;" />
                 <h3 class="project-title retro-font">Head of Hackathon</h3>
                 <p class="project-desc">Gathered 500+ hackers nationwide for 48 hours of nonstop coding.</p>
                 <div class="tech-tags"><span class="tech-tag">Event Mgmt</span><span class="tech-tag">Operations</span>
@@ -343,7 +353,8 @@
                   -></span>
               </article>
               <article class="pixel-panel project-card beyond interactive" tabindex="0" role="button"
-                data-id="techwriter">
+                data-id="techwriter" style="position: relative;">
+                <img src="assets/cash.svg" alt="Cash" class="section-icon-art icon-wobble" style="width: clamp(55px, 7vw, 85px); bottom: -30px; right: -20px; animation-delay: 0.6s;" />
                 <h3 class="project-title retro-font">Tech Writer</h3>
                 <p class="project-desc">Writing casual technical articles read by 10,000+ people monthly.</p>
                 <div class="tech-tags"><span class="tech-tag">Communication</span><span class="tech-tag">SEO</span>
@@ -370,7 +381,7 @@
 
     <div class="container footer-content fade-up">
       <h2 class="section-title retro-font footer-title">
-        <img src="assets/pole.svg" data-flag="assets/flag.svg" alt="Checkpoint" class="checkpoint-flag" />
+        <img src="assets/mailbox.svg" alt="Mailbox" class="checkpoint-flag icon-bounce-slow section-icon-art" style="position: relative; height: 3.2em; width: auto; margin-right: -5px; margin-bottom: -0.6em; vertical-align: bottom;" />
         Save Point
       </h2>
       <p>Ready to collaborate on a new adventure? Send a message.</p>
